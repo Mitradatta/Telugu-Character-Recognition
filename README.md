@@ -1,7 +1,7 @@
 # Telugu Handwritten Character Recognition Using Convolutional Neural Networks
 
 ## Table of Contents
-- [Introduction](https://github.com/Mitradatta/Telugu-Character-Recognition-/tree/main#intro)
+- [Introduction](#intro)
 - [Related Works](https://github.com/Mitradatta/Telugu-Character-Recognition-/edit/main/README.md#related-works)
 - [Dataset Description](https://github.com/Mitradatta/Telugu-Character-Recognition-/edit/main/README.md#dataset-description)
 - [Image Preprocessing](https://github.com/Mitradatta/Telugu-Character-Recognition-/edit/main/README.md#image-pre-processing)
