@@ -3,8 +3,8 @@
 ## Table of Contents
 - [Introduction](#intro)
 - [Related Works](#works)
-- [Dataset Description](https://github.com/Mitradatta/Telugu-Character-Recognition-/edit/main/README.md#dataset-description)
-- [Image Preprocessing](https://github.com/Mitradatta/Telugu-Character-Recognition-/edit/main/README.md#image-pre-processing)
+- [Dataset Description](#description)
+- [Image Preprocessing](preprocessing)
 
 <span id="intro"> </span>
 ## Introduction
@@ -37,6 +37,7 @@ character classification. In this paper a K-NN and A-NN based models where compa
 accuracy even when they use few samples per character which makes it efficient and suitable for handwritten character recognition.
 </p>
 
+<span id="description"> </span>
 ## Dataset Description
 
 <p align="center">
@@ -52,6 +53,7 @@ model, we can improve our dataset by including vothulu and matralu which are ext
 algorithm from character recognition to text ecognition by creating our own dataset.  
  </p>
  
+ <span id="preprocessing"> </span>
  ## Image Pre-processing
  
  ### Image Resizing
@@ -64,4 +66,116 @@ architectures require all images to be in the same size but our raw collected
 images may vary in size. So, we resized all our images to a uniform size.
 </p>
 
-## Image
+<span id="gray"> </span>
+### Gray scale Image converstion
+
+<p align="justify">
+Grayscale image means that the value of each pixel in the image represents only
+the intensity information of the light. Grayscale images are only composed of
+different shades of gray ranging from black to white (weakest intensity to
+strongest intensity).Grayscale image conversion is an Instinctive way to convert a coloured image 3D array to a grayscale 2D array is, for each pixel we will take the average of the red, green, and blue pixel values of the image to get the grayscale value. This combines the lightness contributed by each colour band in the image into a reasonable gray approximation. We do Grayscale image conversion because we can only specify a single intensity value for each pixel, as opposed to the three intensities needed to specify each
+pixel in a full colour image. The main reason for differentiating the images from
+any other sort of colour image is that only less information needs to be provided
+for each pixel so that there will be no need to use more complicated and harder-to-process colour images.
+ </p>
+
+
+### Binarization using adaptive Thresholding
+<p align="justify">
+ Binarization is the process of converting any gray – scale image into black – white
+image two tone image. To perform binarization, first we need the threshold value
+of gray scale and check if a pixel is having a particular gray value or not.
+In case the gray value of the pixels is greater than the threshold value, then those
+pixels are converted to the white. Similarly, if the gray value of the pixels is less
+than the threshold, then those pixels are converted into the black. Normally, we
+ find the global threshold for the whole image and binarize the image using a
+single threshold value.
+ </p>
+ 
+ ### Median Filtering for Noise Removal
+ <p align= "justify">
+The Median filter is a non-linear digital image filtering method, it is used widely in
+removing noise. This noise reduction is an important pre-processing step to
+improve the results of future processing. Under certain conditions, Median filter
+preserves edges at same time as removing noise.
+Median filter is a sliding window that replaces the centre value with the Median
+of all the pixel values in the window. The window or kernel is normally a square
+but it can be of any shape.
+ </p>
+ 
+ ### Data Augmentation
+ <p align = "justify">
+ Data Augmentation is a popular Machine Learning technique used in making
+robust ML models even when the available data is very less. It helps in increasing
+the amount of original data by adding slightly modified copies of already existing
+data or newly created data from the existing data. Adding a variety of data greatly
+helps in reducing over fitting when training a machine learning model on low
+quality and sized data. It is observed to work pretty well in computer vision
+applications such as Image classification, Object detection etc where we now have
+set of transformation function. Data augmentation techniques such as cropping,
+padding, and horizontal flipping are most widely used to train large neural
+networks.After applying augmentation on our data set we were able to produce 9 images
+for each image in our original dataset.
+ </p>
+ 
+ ### Normalization
+ <p align="justify">
+Normalization is a technique mostly applied as part of data preparation in
+machine learning. The main aim of normalization is changing the values of
+numeral columns in the dataset into a common scale, without effecting
+differences in the ranges of values or losing information. Normalization is also
+required when using some algorithms to model the data correctly.
+ </p>
+ 
+ <p align = "center">
+ <img width="300" alt="Screenshot 2022-04-09 at 5 53 20 PM" src="https://user-images.githubusercontent.com/54971204/162574014-a66ee105-812d-4cef-b01d-c7d077276ff6.png">
+</p>
+Here, max(x) and min(x) are the maximum and the minimum values of the feature used.
+
+## Methodology Used
+<p align = "justify">
+ In spite of being popular, ANNs were unable to handle large dataset in
+recognition/classification tasks. To overcome these, a new machine learning
+paradigm, deep learning, was introduced. It is a stacked neural network that is
+composed of several layers. Earlier versions of neural networks, such as the first
+perceptron’s were shallow, composed of one input and one output layer; and one
+hidden layer in between. In deep-learning networks, each layer of nodes trains on
+a distinct set of features based on the previous layer’s output. A model will be
+efficient if hidden layers have the ability to learn complicated features from
+observed data. Deep neural network shows notable performance on unseen data.
+Some popular deep neural network architectures are recurrent neural networks
+(RNNs), CNNs, deep belief networks, auto-encoders and generative adversarial
+networks. In general, CNNs are considered as a machine learning architecture,
+which has a capability to learn from experiences like multilayer neural network
+with back propagation. For the requirement of minimal pre-processing, CNNs use
+a variation of the multilayer perceptron. CNNs are composed of an automatic
+feature extractor and a trainable classifier, having important layers
+ </p>
+ 
+- Convolutional Layer (CL)
+- Pooling Layer (PL)
+- Fully-Connected Layer(FCL)
+
+## Overview of the CNN Architecture Used
+<p align="justify">
+Basic CNN models use CLs and PLs and provide a standard architecture. In CNN’s a
+series of convolution operation along with pooling and non-linearity activation
+function are applied to the input and passing the result to the next layer. The
+filters (F) are applied in the CL to extract relevant features from the input image
+to pass further. Each filter gives a different feature for correct prediction. To
+retain the size of the image, same padding (zero padding) is applied, otherwise
+valid padding is used, since it helps reduce the number of features. The
+convoluted output is obtained as an activation map.
+ </p>
+ 
+Input size=MxN
+
+P=(F-1)/2
+
+(M+2P x N+2P)\*(FxF)
+
+P-Padding
+
+F -is the size of the filter used (3x3)
+
+Output=MxN
