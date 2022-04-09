@@ -61,3 +61,5 @@ increases the time to generate outputs. Also, many deep learning model
 architectures require all images to be in the same size but our raw collected
 images may vary in size. So, we resized all our images to a uniform size.
 </p>
+
+## Image
