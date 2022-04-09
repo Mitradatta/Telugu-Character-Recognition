@@ -6,8 +6,9 @@
 - [Dataset Description](https://github.com/Mitradatta/Telugu-Character-Recognition-/edit/main/README.md#dataset-description)
 - [Image Preprocessing](https://github.com/Mitradatta/Telugu-Character-Recognition-/edit/main/README.md#image-pre-processing)
 
+<span id="intro"> </span>
 ## Introduction
-<p id="intro" align = "justify">
+<p  align = "justify">
 Telugu is a prominent south Indian language spoken by about 74 million people. It has 16 vowels (which are also known as achulu) and 36 consonants (which are
 also known as hallulu). A single character or an Akshara in an Indian language typically represents an entire syllable, or the coda of one syllable and the onset of
 another. Dataset plays an important role in the design of supervised learning systems. Since the datasets available for Telugu characters is very limited and not
