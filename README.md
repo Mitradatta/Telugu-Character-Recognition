@@ -20,6 +20,7 @@ previous learned data and future predicted data. It can learn while working or p
 Another main advantage is that it can automatically select required features, hence feature selection is done by the model itself.
 </p>
 <span id="works"> </span>
+
 ## Related Works
 <p align= "justify">
 During the last few decades researchers were focused on Support Vector Machine (SVM), Neural Networks (NN), k-Nearest Neighbor (k-NN) for classification. 
