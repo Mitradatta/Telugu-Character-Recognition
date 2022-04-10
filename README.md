@@ -16,7 +16,7 @@
 - [CNN Architecture Used](#architecture)
 - [Results](#results)
 - [Conclusion](#conclusion)
-
+- [References](#references)
 
 <span id="intro"> </span>
 ## Introduction
@@ -262,3 +262,12 @@ model, we would like to improve our dataset by including vothulu and matralu
 which are extensions to Telugu alphabet. In future, we can extend this algorithm
 from character recognition to text recognition by creating our own dataset.
   </p>
+  
+ 
+<span id="references"> </span> 
+  ## References
+- https://www.researchgate.net/publication/328745907_A_MomentBased_Representation_for_Online_Telugu_Handwritten_Character_Recognition_Proceedings_of_DAL_2018
+- https://www.worldscientific.com/doi/epdf/10.1142/S0218001420520096
+- S. T. Soman, A. Nandigam and V. S. Chakravarthy, "An efficient multiclassifier system based on convolutional neural network for offline handwritten Telugu character recognition," 2013 National Conference on Communications (NCC), 2013, pp. 1-5, doi: 10.1109/NCC.2013.6488008.
+- https://www.researchgate.net/publication/304576753_A_novel_3D_approach_to_recognize_Telugu_palm_leaf_text
+- https://www.researchgate.net/publication/334488105_UHTelPCC_A_Dataset_for_Telugu_Printed_Character_Recognition
