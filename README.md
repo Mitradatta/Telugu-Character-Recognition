@@ -4,7 +4,19 @@
 - [Introduction](#intro)
 - [Related Works](#works)
 - [Dataset Description](#description)
-- [Image Preprocessing](preprocessing)
+- [Image Preprocessing](#preprocessing)
+   - [Image Resizing](#resize)
+   - [Gray scale Image converstion](#gray)
+   - [Binarization using adaptive Thresholding](#binary)
+   - [Median Filtering for Noise Removal](#median)
+   - [Data Augmentation](#augmentation)
+   - [Normalization](#normalize)
+- [Methodology Used](#methodology)
+- [Overview of the Convolutional Neural Networks and its Architecture](#overview)
+- [CNN Architecture Used](#architecture)
+- [Results](#results)
+- [Conclusion](#conclusion)
+
 
 <span id="intro"> </span>
 ## Introduction
@@ -56,6 +68,7 @@ algorithm from character recognition to text ecognition by creating our own data
  <span id="preprocessing"> </span>
  ## Image Pre-processing
  
+ <span id="resize"> </span>
  ### Image Resizing
  <p align="justify">
  Resizing images is a difficult step in computer vision. Primarily, our machine
@@ -65,6 +78,16 @@ increases the time to generate outputs. Also, many deep learning model
 architectures require all images to be in the same size but our raw collected
 images may vary in size. So, we resized all our images to a uniform size.
 </p>
+
+
+<p align="center">
+ <img width="400" alt="Screenshot 2022-04-10 at 2 28 55 PM" src="https://user-images.githubusercontent.com/54971204/162610907-5f104522-5ff9-4fd7-95ad-e7182a849159.png">
+</p>
+
+
+
+
+
 
 <span id="gray"> </span>
 ### Gray scale Image converstion
@@ -78,8 +101,12 @@ pixel in a full colour image. The main reason for differentiating the images fro
 any other sort of colour image is that only less information needs to be provided
 for each pixel so that there will be no need to use more complicated and harder-to-process colour images.
  </p>
+ 
+<p align="center">
+<img width="300" alt="Screenshot 2022-04-10 at 2 29 10 PM" src="https://user-images.githubusercontent.com/54971204/162610992-3e060265-7fa1-4040-aca5-d664f6d777ed.png">
+</p>
 
-
+<span id="binary"> </span>
 ### Binarization using adaptive Thresholding
 <p align="justify">
  Binarization is the process of converting any gray – scale image into black – white
@@ -92,6 +119,12 @@ than the threshold, then those pixels are converted into the black. Normally, we
 single threshold value.
  </p>
  
+ 
+ <p align="center">
+ <img width="300" alt="Screenshot 2022-04-10 at 2 29 23 PM" src="https://user-images.githubusercontent.com/54971204/162611021-3d8139c3-59ca-4c89-af69-40961548e137.png">
+</p>
+ 
+ <span id="median"> </span>
  ### Median Filtering for Noise Removal
  <p align= "justify">
 The Median filter is a non-linear digital image filtering method, it is used widely in
@@ -103,6 +136,11 @@ of all the pixel values in the window. The window or kernel is normally a square
 but it can be of any shape.
  </p>
  
+ <p align="center">
+ <img width="300" alt="Screenshot 2022-04-10 at 2 29 36 PM" src="https://user-images.githubusercontent.com/54971204/162611051-19f78aa9-f8a1-4292-8dfb-8e16399cf62d.png">
+</p>
+ 
+ <span id="augmentation"> </span>
  ### Data Augmentation
  <p align = "justify">
  Data Augmentation is a popular Machine Learning technique used in making
@@ -118,6 +156,11 @@ networks.After applying augmentation on our data set we were able to produce 9 i
 for each image in our original dataset.
  </p>
  
+ <p align="center">
+ <img width="500" alt="Screenshot 2022-04-10 at 2 29 56 PM" src="https://user-images.githubusercontent.com/54971204/162611076-2d8bcefd-9e82-40d1-9084-4dfea2881fdb.png">
+ </p>
+ 
+ <span id="normalize"> </span>
  ### Normalization
  <p align="justify">
 Normalization is a technique mostly applied as part of data preparation in
@@ -132,6 +175,7 @@ required when using some algorithms to model the data correctly.
 </p>
 Here, max(x) and min(x) are the maximum and the minimum values of the feature used.
 
+ <span id="methodology"> </span>
 ## Methodology Used
 <p align = "justify">
  In spite of being popular, ANNs were unable to handle large dataset in
@@ -156,7 +200,8 @@ feature extractor and a trainable classifier, having important layers
 - Pooling Layer (PL)
 - Fully-Connected Layer(FCL)
 
-## Overview of the CNN Architecture Used
+<span id="overview"> </span>
+## Overview of the Convolutional Neural Networks and its Architecture
 <p align="justify">
 Basic CNN models use CLs and PLs and provide a standard architecture. In CNN’s a
 series of convolution operation along with pooling and non-linearity activation
@@ -179,3 +224,41 @@ P-Padding
 F -is the size of the filter used (3x3)
 
 Output=MxN
+
+<span id="architecture"> </span>
+## CNN Architecture Used:
+We provided a basic overview of CNN architecture in the above section. We
+proposed a CNN architecture that is designed to recognize telugu characters.
+The architecture in the below diagram, which comprises of 6 layers, excluding input. The input image is a 76x80x1 pixel image. Firstly, the size of the input image is resized to (76x80). Then the first layer takes image pixels as input. Each convolution layers are in an alternating position with sub-sampling or pooling layers (Max pooling size-2x2), which take the pooled maps as input. In proposed model CLs have (3x3) Filter with same Padding. All the convolution stride is fixed to one. For every Convolution layer we have used RELU activation function. The final dense output was classified using soft max function.
+
+<p align="center">
+ 
+ <img width="1234" alt="Screenshot 2022-04-10 at 2 30 53 PM" src="https://user-images.githubusercontent.com/54971204/162611441-58a68cd3-901b-47e3-bc35-db79b6151658.png">
+ </p>
+ 
+ 
+ <span id="results"> </span>
+ ## Results
+ <p align="justify">
+ All the experiments are performed over a system having specifications as MacOS,
+64 bit operating system , and Intel(R) i5 @1.5 GHz dual core and all the
+stimulations has been done through Jupyter notebook over a standard dataset.
+The standard dataset contains 250 samples from each of the 52 categories Telugu
+character Dataset. The accuracy of the model for the training dataset has shown
+98% and the accuracy of the trained model for testing data was 94.6%.
+ </p>
+ 
+ 
+<span id="conclusion"> </span> 
+ ## Conclusion
+ <p align="justify">
+ We presented a comprehensive and practical CNN system for Telugu Language.
+The proposed system is shape and edge dependent and requires pre-processing
+and feature extraction. The experimental result shows, the performance
+characteristics of the Convolution Neural Network. To conclude, the design,
+approach and implementation were driven by the need for a practical CNN
+system for Telugu handwritten character recognition. Based on the output of the
+model, we would like to improve our dataset by including vothulu and matralu
+which are extensions to Telugu alphabet. In future, we can extend this algorithm
+from character recognition to text recognition by creating our own dataset.
+  </p>
